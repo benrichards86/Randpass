@@ -149,7 +149,7 @@ namespace Randpass {
 			this->saveListDialog = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->openListDialog = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->gbOptions->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numPassLen))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numPassLen))->BeginInit();
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -160,9 +160,10 @@ namespace Randpass {
 			// 
 			// bGenerate
 			// 
-			this->bGenerate->Location = System::Drawing::Point(126, 268);
+			this->bGenerate->Location = System::Drawing::Point(168, 330);
+			this->bGenerate->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bGenerate->Name = L"bGenerate";
-			this->bGenerate->Size = System::Drawing::Size(75, 23);
+			this->bGenerate->Size = System::Drawing::Size(100, 28);
 			this->bGenerate->TabIndex = 0;
 			this->bGenerate->Text = L"Generate";
 			this->bGenerate->UseVisualStyleBackColor = true;
@@ -170,23 +171,26 @@ namespace Randpass {
 			// 
 			// tbNewPass
 			// 
-			this->tbNewPass->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
+			this->tbNewPass->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->tbNewPass->BackColor = System::Drawing::SystemColors::Window;
-			this->tbNewPass->Location = System::Drawing::Point(37, 243);
+			this->tbNewPass->Location = System::Drawing::Point(49, 299);
+			this->tbNewPass->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tbNewPass->Name = L"tbNewPass";
 			this->tbNewPass->ReadOnly = true;
-			this->tbNewPass->Size = System::Drawing::Size(275, 20);
+			this->tbNewPass->Size = System::Drawing::Size(365, 22);
 			this->tbNewPass->TabIndex = 1;
 			// 
 			// lbPasswords
 			// 
-			this->lbPasswords->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left) 
+			this->lbPasswords->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
 				| System::Windows::Forms::AnchorStyles::Right));
 			this->lbPasswords->FormattingEnabled = true;
-			this->lbPasswords->Location = System::Drawing::Point(12, 12);
+			this->lbPasswords->ItemHeight = 16;
+			this->lbPasswords->Location = System::Drawing::Point(16, 15);
+			this->lbPasswords->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->lbPasswords->Name = L"lbPasswords";
-			this->lbPasswords->Size = System::Drawing::Size(326, 225);
+			this->lbPasswords->Size = System::Drawing::Size(433, 276);
 			this->lbPasswords->TabIndex = 2;
 			this->lbPasswords->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::lbPasswords_SelectedIndexChanged);
 			// 
@@ -196,9 +200,11 @@ namespace Randpass {
 			this->gbOptions->Controls->Add(this->rbMixed);
 			this->gbOptions->Controls->Add(this->rbUppercase);
 			this->gbOptions->Controls->Add(this->rbLowercase);
-			this->gbOptions->Location = System::Drawing::Point(6, 6);
+			this->gbOptions->Location = System::Drawing::Point(8, 7);
+			this->gbOptions->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->gbOptions->Name = L"gbOptions";
-			this->gbOptions->Size = System::Drawing::Size(304, 100);
+			this->gbOptions->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->gbOptions->Size = System::Drawing::Size(405, 123);
 			this->gbOptions->TabIndex = 3;
 			this->gbOptions->TabStop = false;
 			this->gbOptions->Text = L"Letters";
@@ -206,9 +212,10 @@ namespace Randpass {
 			// rbNoLetters
 			// 
 			this->rbNoLetters->AutoSize = true;
-			this->rbNoLetters->Location = System::Drawing::Point(162, 20);
+			this->rbNoLetters->Location = System::Drawing::Point(216, 25);
+			this->rbNoLetters->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->rbNoLetters->Name = L"rbNoLetters";
-			this->rbNoLetters->Size = System::Drawing::Size(101, 17);
+			this->rbNoLetters->Size = System::Drawing::Size(132, 21);
 			this->rbNoLetters->TabIndex = 3;
 			this->rbNoLetters->TabStop = true;
 			this->rbNoLetters->Text = L"Don\'t use letters";
@@ -218,9 +225,10 @@ namespace Randpass {
 			// 
 			this->rbMixed->AutoSize = true;
 			this->rbMixed->Checked = true;
-			this->rbMixed->Location = System::Drawing::Point(7, 68);
+			this->rbMixed->Location = System::Drawing::Point(9, 84);
+			this->rbMixed->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->rbMixed->Name = L"rbMixed";
-			this->rbMixed->Size = System::Drawing::Size(151, 17);
+			this->rbMixed->Size = System::Drawing::Size(198, 21);
 			this->rbMixed->TabIndex = 2;
 			this->rbMixed->TabStop = true;
 			this->rbMixed->Text = L"Mix lower and upper letters";
@@ -229,9 +237,10 @@ namespace Randpass {
 			// rbUppercase
 			// 
 			this->rbUppercase->AutoSize = true;
-			this->rbUppercase->Location = System::Drawing::Point(7, 44);
+			this->rbUppercase->Location = System::Drawing::Point(9, 54);
+			this->rbUppercase->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->rbUppercase->Name = L"rbUppercase";
-			this->rbUppercase->Size = System::Drawing::Size(108, 17);
+			this->rbUppercase->Size = System::Drawing::Size(141, 21);
 			this->rbUppercase->TabIndex = 1;
 			this->rbUppercase->Text = L"Uppercase letters";
 			this->rbUppercase->UseVisualStyleBackColor = true;
@@ -239,9 +248,10 @@ namespace Randpass {
 			// rbLowercase
 			// 
 			this->rbLowercase->AutoSize = true;
-			this->rbLowercase->Location = System::Drawing::Point(7, 20);
+			this->rbLowercase->Location = System::Drawing::Point(9, 25);
+			this->rbLowercase->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->rbLowercase->Name = L"rbLowercase";
-			this->rbLowercase->Size = System::Drawing::Size(108, 17);
+			this->rbLowercase->Size = System::Drawing::Size(140, 21);
 			this->rbLowercase->TabIndex = 0;
 			this->rbLowercase->Text = L"Lowercase letters";
 			this->rbLowercase->UseVisualStyleBackColor = true;
@@ -249,29 +259,32 @@ namespace Randpass {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(6, 119);
+			this->label1->Location = System::Drawing::Point(8, 146);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(88, 13);
+			this->label1->Size = System::Drawing::Size(116, 17);
 			this->label1->TabIndex = 8;
 			this->label1->Text = L"Password length:";
 			// 
 			// numPassLen
 			// 
-			this->numPassLen->Location = System::Drawing::Point(100, 117);
-			this->numPassLen->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) {64, 0, 0, 0});
-			this->numPassLen->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) {4, 0, 0, 0});
+			this->numPassLen->Location = System::Drawing::Point(133, 144);
+			this->numPassLen->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->numPassLen->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 64, 0, 0, 0 });
+			this->numPassLen->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 4, 0, 0, 0 });
 			this->numPassLen->Name = L"numPassLen";
-			this->numPassLen->Size = System::Drawing::Size(52, 20);
+			this->numPassLen->Size = System::Drawing::Size(69, 22);
 			this->numPassLen->TabIndex = 7;
-			this->numPassLen->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) {8, 0, 0, 0});
+			this->numPassLen->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 8, 0, 0, 0 });
 			// 
 			// cbCustom
 			// 
 			this->cbCustom->AutoSize = true;
 			this->cbCustom->Enabled = false;
-			this->cbCustom->Location = System::Drawing::Point(6, 189);
+			this->cbCustom->Location = System::Drawing::Point(8, 233);
+			this->cbCustom->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cbCustom->Name = L"cbCustom";
-			this->cbCustom->Size = System::Drawing::Size(145, 17);
+			this->cbCustom->Size = System::Drawing::Size(189, 21);
 			this->cbCustom->TabIndex = 5;
 			this->cbCustom->Text = L"Use custom character list";
 			this->cbCustom->UseVisualStyleBackColor = true;
@@ -279,9 +292,10 @@ namespace Randpass {
 			// cbSymbols
 			// 
 			this->cbSymbols->AutoSize = true;
-			this->cbSymbols->Location = System::Drawing::Point(6, 166);
+			this->cbSymbols->Location = System::Drawing::Point(8, 204);
+			this->cbSymbols->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cbSymbols->Name = L"cbSymbols";
-			this->cbSymbols->Size = System::Drawing::Size(85, 17);
+			this->cbSymbols->Size = System::Drawing::Size(110, 21);
 			this->cbSymbols->TabIndex = 4;
 			this->cbSymbols->Text = L"Use symbols";
 			this->cbSymbols->UseVisualStyleBackColor = true;
@@ -289,9 +303,10 @@ namespace Randpass {
 			// cbNumbers
 			// 
 			this->cbNumbers->AutoSize = true;
-			this->cbNumbers->Location = System::Drawing::Point(6, 143);
+			this->cbNumbers->Location = System::Drawing::Point(8, 176);
+			this->cbNumbers->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->cbNumbers->Name = L"cbNumbers";
-			this->cbNumbers->Size = System::Drawing::Size(88, 17);
+			this->cbNumbers->Size = System::Drawing::Size(114, 21);
 			this->cbNumbers->TabIndex = 3;
 			this->cbNumbers->Text = L"Use numbers";
 			this->cbNumbers->UseVisualStyleBackColor = true;
@@ -301,10 +316,11 @@ namespace Randpass {
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage3);
-			this->tabControl1->Location = System::Drawing::Point(9, 297);
+			this->tabControl1->Location = System::Drawing::Point(12, 366);
+			this->tabControl1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(326, 238);
+			this->tabControl1->Size = System::Drawing::Size(435, 293);
 			this->tabControl1->TabIndex = 4;
 			// 
 			// tabPage1
@@ -315,10 +331,11 @@ namespace Randpass {
 			this->tabPage1->Controls->Add(this->cbCustom);
 			this->tabPage1->Controls->Add(this->cbNumbers);
 			this->tabPage1->Controls->Add(this->cbSymbols);
-			this->tabPage1->Location = System::Drawing::Point(4, 22);
+			this->tabPage1->Location = System::Drawing::Point(4, 25);
+			this->tabPage1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(318, 212);
+			this->tabPage1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabPage1->Size = System::Drawing::Size(427, 264);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Options";
 			this->tabPage1->UseVisualStyleBackColor = true;
@@ -330,10 +347,11 @@ namespace Randpass {
 			this->tabPage2->Controls->Add(this->bAddChar);
 			this->tabPage2->Controls->Add(this->tbAddChar);
 			this->tabPage2->Controls->Add(this->lbChars);
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
+			this->tabPage2->Location = System::Drawing::Point(4, 25);
+			this->tabPage2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(318, 212);
+			this->tabPage2->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabPage2->Size = System::Drawing::Size(427, 264);
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Custom characters";
 			this->tabPage2->UseVisualStyleBackColor = true;
@@ -341,9 +359,10 @@ namespace Randpass {
 			// bRemove
 			// 
 			this->bRemove->Enabled = false;
-			this->bRemove->Location = System::Drawing::Point(235, 185);
+			this->bRemove->Location = System::Drawing::Point(313, 228);
+			this->bRemove->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bRemove->Name = L"bRemove";
-			this->bRemove->Size = System::Drawing::Size(75, 23);
+			this->bRemove->Size = System::Drawing::Size(100, 28);
 			this->bRemove->TabIndex = 4;
 			this->bRemove->Text = L"Remove";
 			this->bRemove->UseVisualStyleBackColor = true;
@@ -352,9 +371,10 @@ namespace Randpass {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(7, 81);
+			this->label2->Location = System::Drawing::Point(9, 100);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(214, 13);
+			this->label2->Size = System::Drawing::Size(285, 17);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Type the character(s) you would like to add:";
 			// 
@@ -364,9 +384,10 @@ namespace Randpass {
 			this->bAddChar->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->bAddChar->ImageKey = L"arrow_right.bmp";
 			this->bAddChar->ImageList = this->imageList1;
-			this->bAddChar->Location = System::Drawing::Point(146, 123);
+			this->bAddChar->Location = System::Drawing::Point(195, 151);
+			this->bAddChar->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bAddChar->Name = L"bAddChar";
-			this->bAddChar->Size = System::Drawing::Size(75, 23);
+			this->bAddChar->Size = System::Drawing::Size(100, 28);
 			this->bAddChar->TabIndex = 2;
 			this->bAddChar->Text = L"Add";
 			this->bAddChar->TextImageRelation = System::Windows::Forms::TextImageRelation::TextBeforeImage;
@@ -375,26 +396,29 @@ namespace Randpass {
 			// 
 			// imageList1
 			// 
-			this->imageList1->ImageStream = (cli::safe_cast<System::Windows::Forms::ImageListStreamer^  >(resources->GetObject(L"imageList1.ImageStream")));
+			this->imageList1->ImageStream = (cli::safe_cast<System::Windows::Forms::ImageListStreamer^>(resources->GetObject(L"imageList1.ImageStream")));
 			this->imageList1->TransparentColor = System::Drawing::Color::White;
 			this->imageList1->Images->SetKeyName(0, L"arrow_right.bmp");
 			this->imageList1->Images->SetKeyName(1, L"app.ico");
 			// 
 			// tbAddChar
 			// 
-			this->tbAddChar->Location = System::Drawing::Point(10, 97);
+			this->tbAddChar->Location = System::Drawing::Point(13, 119);
+			this->tbAddChar->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tbAddChar->Name = L"tbAddChar";
-			this->tbAddChar->Size = System::Drawing::Size(211, 20);
+			this->tbAddChar->Size = System::Drawing::Size(280, 22);
 			this->tbAddChar->TabIndex = 1;
 			this->tbAddChar->TextChanged += gcnew System::EventHandler(this, &Form1::tbAddChar_TextChanged);
 			// 
 			// lbChars
 			// 
 			this->lbChars->FormattingEnabled = true;
-			this->lbChars->Location = System::Drawing::Point(235, 6);
+			this->lbChars->ItemHeight = 16;
+			this->lbChars->Location = System::Drawing::Point(313, 7);
+			this->lbChars->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->lbChars->Name = L"lbChars";
 			this->lbChars->SelectionMode = System::Windows::Forms::SelectionMode::MultiExtended;
-			this->lbChars->Size = System::Drawing::Size(75, 173);
+			this->lbChars->Size = System::Drawing::Size(99, 212);
 			this->lbChars->TabIndex = 0;
 			this->lbChars->SelectedIndexChanged += gcnew System::EventHandler(this, &Form1::lbChars_SelectedIndexChanged);
 			// 
@@ -402,10 +426,11 @@ namespace Randpass {
 			// 
 			this->tabPage3->Controls->Add(this->gbSaveList);
 			this->tabPage3->Controls->Add(this->gbSaveOptions);
-			this->tabPage3->Location = System::Drawing::Point(4, 22);
+			this->tabPage3->Location = System::Drawing::Point(4, 25);
+			this->tabPage3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tabPage3->Name = L"tabPage3";
-			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage3->Size = System::Drawing::Size(318, 212);
+			this->tabPage3->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabPage3->Size = System::Drawing::Size(427, 264);
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"Save/Load";
 			this->tabPage3->UseVisualStyleBackColor = true;
@@ -414,18 +439,21 @@ namespace Randpass {
 			// 
 			this->gbSaveList->Controls->Add(this->bLoadList);
 			this->gbSaveList->Controls->Add(this->bSaveList);
-			this->gbSaveList->Location = System::Drawing::Point(7, 110);
+			this->gbSaveList->Location = System::Drawing::Point(9, 135);
+			this->gbSaveList->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->gbSaveList->Name = L"gbSaveList";
-			this->gbSaveList->Size = System::Drawing::Size(305, 96);
+			this->gbSaveList->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->gbSaveList->Size = System::Drawing::Size(407, 118);
 			this->gbSaveList->TabIndex = 1;
 			this->gbSaveList->TabStop = false;
 			this->gbSaveList->Text = L"Password list";
 			// 
 			// bLoadList
 			// 
-			this->bLoadList->Location = System::Drawing::Point(168, 43);
+			this->bLoadList->Location = System::Drawing::Point(224, 53);
+			this->bLoadList->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bLoadList->Name = L"bLoadList";
-			this->bLoadList->Size = System::Drawing::Size(75, 23);
+			this->bLoadList->Size = System::Drawing::Size(100, 28);
 			this->bLoadList->TabIndex = 1;
 			this->bLoadList->Text = L"Load...";
 			this->bLoadList->UseVisualStyleBackColor = true;
@@ -433,9 +461,10 @@ namespace Randpass {
 			// 
 			// bSaveList
 			// 
-			this->bSaveList->Location = System::Drawing::Point(52, 43);
+			this->bSaveList->Location = System::Drawing::Point(69, 53);
+			this->bSaveList->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bSaveList->Name = L"bSaveList";
-			this->bSaveList->Size = System::Drawing::Size(75, 23);
+			this->bSaveList->Size = System::Drawing::Size(100, 28);
 			this->bSaveList->TabIndex = 0;
 			this->bSaveList->Text = L"Save...";
 			this->bSaveList->UseVisualStyleBackColor = true;
@@ -445,18 +474,21 @@ namespace Randpass {
 			// 
 			this->gbSaveOptions->Controls->Add(this->bLoad);
 			this->gbSaveOptions->Controls->Add(this->bSaveOptions);
-			this->gbSaveOptions->Location = System::Drawing::Point(7, 7);
+			this->gbSaveOptions->Location = System::Drawing::Point(9, 9);
+			this->gbSaveOptions->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->gbSaveOptions->Name = L"gbSaveOptions";
-			this->gbSaveOptions->Size = System::Drawing::Size(305, 97);
+			this->gbSaveOptions->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->gbSaveOptions->Size = System::Drawing::Size(407, 119);
 			this->gbSaveOptions->TabIndex = 0;
 			this->gbSaveOptions->TabStop = false;
 			this->gbSaveOptions->Text = L"Options";
 			// 
 			// bLoad
 			// 
-			this->bLoad->Location = System::Drawing::Point(168, 38);
+			this->bLoad->Location = System::Drawing::Point(224, 47);
+			this->bLoad->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bLoad->Name = L"bLoad";
-			this->bLoad->Size = System::Drawing::Size(75, 23);
+			this->bLoad->Size = System::Drawing::Size(100, 28);
 			this->bLoad->TabIndex = 1;
 			this->bLoad->Text = L"Load...";
 			this->bLoad->UseVisualStyleBackColor = true;
@@ -464,9 +496,10 @@ namespace Randpass {
 			// 
 			// bSaveOptions
 			// 
-			this->bSaveOptions->Location = System::Drawing::Point(52, 38);
+			this->bSaveOptions->Location = System::Drawing::Point(69, 47);
+			this->bSaveOptions->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->bSaveOptions->Name = L"bSaveOptions";
-			this->bSaveOptions->Size = System::Drawing::Size(75, 23);
+			this->bSaveOptions->Size = System::Drawing::Size(100, 28);
 			this->bSaveOptions->TabIndex = 0;
 			this->bSaveOptions->Text = L"Save...";
 			this->bSaveOptions->UseVisualStyleBackColor = true;
@@ -487,33 +520,34 @@ namespace Randpass {
 			// 
 			// saveListDialog
 			// 
-			this->saveListDialog->DefaultExt = L"rpl";
-			this->saveListDialog->Filter = L"Password lists|*.rpl|All files|*.*";
+			this->saveListDialog->DefaultExt = L"txt";
+			this->saveListDialog->Filter = L"Password lists|*.txt|All files|*.*";
 			this->saveListDialog->FileOk += gcnew System::ComponentModel::CancelEventHandler(this, &Form1::saveListDialog_FileOk);
 			// 
 			// openListDialog
 			// 
-			this->openListDialog->DefaultExt = L"rpl";
-			this->openListDialog->Filter = L"Password lists|*.rpl|All files|*.*";
+			this->openListDialog->DefaultExt = L"txt";
+			this->openListDialog->Filter = L"Password lists|*.txt|All files|*.*";
 			this->openListDialog->FileOk += gcnew System::ComponentModel::CancelEventHandler(this, &Form1::openListDialog_FileOk);
 			// 
 			// Form1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(350, 558);
+			this->ClientSize = System::Drawing::Size(467, 687);
 			this->Controls->Add(this->tabControl1);
 			this->Controls->Add(this->lbPasswords);
 			this->Controls->Add(this->tbNewPass);
 			this->Controls->Add(this->bGenerate);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
-			this->Icon = (cli::safe_cast<System::Drawing::Icon^  >(resources->GetObject(L"$this.Icon")));
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->MaximizeBox = false;
 			this->Name = L"Form1";
 			this->Text = L"Random Password Generator";
 			this->gbOptions->ResumeLayout(false);
 			this->gbOptions->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->numPassLen))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numPassLen))->EndInit();
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
 			this->tabPage1->PerformLayout();
@@ -529,6 +563,8 @@ namespace Randpass {
 #pragma endregion
 private: System::Void loadOptions(const wchar_t *filename);
 private: System::Void saveOptions(const wchar_t *filename);
+private: System::Void loadPasswords(const wchar_t *filename);
+private: System::Void savePasswords(const wchar_t *filename);
 private: System::String^ addCustomChars(System::String^ charStr);
 private: System::Void bGenerate_Click(System::Object^  sender, System::EventArgs^  e);
 private: System::Void lbPasswords_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
@@ -558,14 +594,8 @@ private: System::Void bSaveList_Click(System::Object^  sender, System::EventArgs
 private: System::Void bLoadList_Click(System::Object^  sender, System::EventArgs^  e) {
 			 openListDialog->ShowDialog(this);
 		 }
-private: System::Void saveListDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-			 pin_ptr<const wchar_t> filename = PtrToStringChars(saveListDialog->FileName);
-			 MessageBox::Show("Not implemented yet");
-		 }
-private: System::Void openListDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-			 pin_ptr<const wchar_t> filename = PtrToStringChars(openListDialog->FileName);
-			 MessageBox::Show("Not implemented yet");
-		 }
+private: System::Void saveListDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e); 
+private: System::Void openListDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e); 
 };
 }
 

@@ -62,9 +62,9 @@ System::Void Form1::bGenerate_Click(System::Object^  sender, System::EventArgs^ 
 			// If not checked, fall through...
 		case 3:
             if (cbCustom->Checked) {
-				ArrayList chars = gcnew ArrayList(lbChars->Items);
+				ArrayList ^chars = gcnew ArrayList(lbChars->Items);
                             
-				int i = (int)((n % 100) / 100.0f * chars.Count);
+				int i = (int)((n % 100) / 100.0f * chars->Count);
 				tbNewPass->Text += chars[i];
 				break;
             }
@@ -179,7 +179,7 @@ System::Void Form1::saveOptions(const wchar_t *filename) {
 	opt.custom = cbCustom->Checked;
 	opt.length = numPassLen->Value;
 
-	ArrayList chars = gcnew ArrayList(lbChars->Items);
+	ArrayList ^chars = gcnew ArrayList(lbChars->Items);
 	for (int i = 0; i < 256; i++) {
 		if (i < lbChars->Items->Count)
 			opt.customChars[i] = (wchar_t)chars[i];
@@ -191,6 +191,29 @@ System::Void Form1::saveOptions(const wchar_t *filename) {
 	std::ofstream out(filename, std::ios::binary);
 	out.write((char*)&opt, sizeof(opt));
 	out.close();
+}
+
+System::Void Form1::saveListDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+	pin_ptr<const wchar_t> filename = PtrToStringChars(saveListDialog->FileName);
+	savePasswords(filename);
+}
+
+System::Void Form1::savePasswords(const wchar_t *filename) {
+	std::ofstream out(filename);
+	for (int i = 0; i < lbPasswords->Items->Count; i++) {
+		IntPtr line = System::Runtime::InteropServices::Marshal::StringToHGlobalUni((String^)lbPasswords->Items[i]);
+		out << (wchar_t*)line.ToPointer() << std::endl;
+		System::Runtime::InteropServices::Marshal::FreeHGlobal(line);
+	}
+	out.close();
+}
+
+System::Void Form1::openListDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
+	pin_ptr<const wchar_t> filename = PtrToStringChars(openListDialog->FileName);
+	MessageBox::Show("Not implemented yet");
+}
+
+System::Void Form1::loadPasswords(const wchar_t *filename) {
 }
 
 System::String^ Form1::addCustomChars(System::String^ charStr){
