@@ -563,8 +563,8 @@ namespace Randpass {
 #pragma endregion
 private: System::Void loadOptions(const wchar_t *filename);
 private: System::Void saveOptions(const wchar_t *filename);
-private: System::Void loadPasswords(const wchar_t *filename);
-private: System::Void savePasswords(const wchar_t *filename);
+private: System::Void loadPasswords(String^ filename);
+private: System::Void savePasswords(String^ filename);
 private: System::String^ addCustomChars(System::String^ charStr);
 private: System::Void bGenerate_Click(System::Object^  sender, System::EventArgs^  e);
 private: System::Void lbPasswords_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {

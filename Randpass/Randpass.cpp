@@ -194,18 +194,15 @@ System::Void Form1::saveOptions(const wchar_t *filename) {
 }
 
 System::Void Form1::saveListDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-	pin_ptr<const wchar_t> filename = PtrToStringChars(saveListDialog->FileName);
-	savePasswords(filename);
+	savePasswords(saveListDialog->FileName);
 }
 
-System::Void Form1::savePasswords(const wchar_t *filename) {
-	std::ofstream out(filename);
+System::Void Form1::savePasswords(String^ filename) {
+	System::IO::StreamWriter^ out = gcnew System::IO::StreamWriter(filename);
 	for (int i = 0; i < lbPasswords->Items->Count; i++) {
-		IntPtr line = System::Runtime::InteropServices::Marshal::StringToHGlobalUni((String^)lbPasswords->Items[i]);
-		out << (wchar_t*)line.ToPointer() << std::endl;
-		System::Runtime::InteropServices::Marshal::FreeHGlobal(line);
+		out->WriteLine((String^)lbPasswords->Items[i]);
 	}
-	out.close();
+	out->Close();
 }
 
 System::Void Form1::openListDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
@@ -213,7 +210,7 @@ System::Void Form1::openListDialog_FileOk(System::Object^  sender, System::Compo
 	MessageBox::Show("Not implemented yet");
 }
 
-System::Void Form1::loadPasswords(const wchar_t *filename) {
+System::Void Form1::loadPasswords(String^ filename) {
 }
 
 System::String^ Form1::addCustomChars(System::String^ charStr){
