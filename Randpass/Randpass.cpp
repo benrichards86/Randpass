@@ -206,11 +206,15 @@ System::Void Form1::savePasswords(String^ filename) {
 }
 
 System::Void Form1::openListDialog_FileOk(System::Object^  sender, System::ComponentModel::CancelEventArgs^  e) {
-	pin_ptr<const wchar_t> filename = PtrToStringChars(openListDialog->FileName);
-	MessageBox::Show("Not implemented yet");
+	loadPasswords(openListDialog->FileName);
 }
 
 System::Void Form1::loadPasswords(String^ filename) {
+	System::IO::StreamReader ^in = gcnew System::IO::StreamReader(filename);
+	while (!in->EndOfStream) {
+		lbPasswords->Items->Add(in->ReadLine());
+	}
+	in->Close();
 }
 
 System::String^ Form1::addCustomChars(System::String^ charStr){
